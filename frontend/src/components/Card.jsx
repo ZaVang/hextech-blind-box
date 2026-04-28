@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const RATING_COLORS = {
   SSS: { bg: 'from-yellow-400/20 to-yellow-600/20', border: '#FFD700', text: '#FFD700' },
@@ -18,8 +18,15 @@ const POSITION_COLORS = {
 }
 
 export default function Card({ player, index = 0, isSubstitute = false, onClick, isFlipped, disabled = false }) {
-  const [flipped, setFlipped] = useState(isFlipped || false)
+  const [flipped, setFlipped] = useState(false)
   const ratingStyle = RATING_COLORS[player.rating] || RATING_COLORS.B
+
+  // 监听 isFlipped prop 变化
+  useEffect(() => {
+    if (isFlipped !== undefined) {
+      setFlipped(isFlipped)
+    }
+  }, [isFlipped])
 
   const handleClick = () => {
     if (disabled) return
@@ -27,31 +34,17 @@ export default function Card({ player, index = 0, isSubstitute = false, onClick,
     if (onClick) onClick(player)
   }
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.8 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      scale: 1,
-      transition: { 
+  return (
+    <motion.div
+      className="card-container w-[160px] h-[220px] cursor-pointer"
+      initial={{ opacity: 0, y: 50, scale: 0.8 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ 
         delay: index * 0.1,
         duration: 0.5,
         type: 'spring',
         stiffness: 100
-      }
-    },
-    flipped: { 
-      rotateY: 180,
-      transition: { duration: 0.6, ease: 'easeInOut' }
-    }
-  }
-
-  return (
-    <motion.div
-      className="card-container w-[160px] h-[220px] cursor-pointer"
-      variants={cardVariants}
-      initial="hidden"
-      animate={flipped ? 'flipped' : 'visible'}
+      }}
       onClick={handleClick}
       whileHover={!flipped && !disabled ? { scale: 1.05 } : {}}
       style={{ perspective: '1000px' }}
@@ -66,10 +59,11 @@ export default function Card({ player, index = 0, isSubstitute = false, onClick,
       >
         {/* Card Back */}
         <div 
-          className="card-back absolute w-full h-full flex flex-col items-center justify-center overflow-hidden"
+          className="card-back absolute w-full h-full flex flex-col items-center justify-center overflow-hidden rounded-xl bg-surface border border-gold/30"
           style={{ backfaceVisibility: 'hidden' }}
         >
           <div className="absolute inset-0 shimmer-gold opacity-50" />
+          
           <div className="relative z-10 flex flex-col items-center">
             <div className="text-6xl mb-2 opacity-80">⚔️</div>
             <div className="text-gold font-title text-lg font-semibold tracking-wider">
@@ -81,6 +75,7 @@ export default function Card({ player, index = 0, isSubstitute = false, onClick,
               </div>
             )}
           </div>
+          
           {/* Corner decorations */}
           <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-gold opacity-60" />
           <div className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-gold opacity-60" />
@@ -90,7 +85,7 @@ export default function Card({ player, index = 0, isSubstitute = false, onClick,
 
         {/* Card Front */}
         <div 
-          className="card-front absolute w-full h-full p-3 flex flex-col"
+          className="card-front absolute w-full h-full p-3 flex flex-col rounded-xl bg-surface border-2"
           style={{ 
             backfaceVisibility: 'hidden',
             transform: 'rotateY(180deg)',
@@ -101,7 +96,7 @@ export default function Card({ player, index = 0, isSubstitute = false, onClick,
           {/* Header with rating */}
           <div className="flex justify-between items-start mb-2">
             <div 
-              className={`px-2 py-0.5 rounded text-sm font-bold`}
+              className="px-2 py-0.5 rounded text-sm font-bold"
               style={{ 
                 backgroundColor: `${ratingStyle.border}30`,
                 color: ratingStyle.text,
@@ -136,7 +131,7 @@ export default function Card({ player, index = 0, isSubstitute = false, onClick,
             {(player.tags || []).slice(0, 3).map((tag, i) => (
               <span 
                 key={i}
-                className="px-1.5 py-0.5 text-[10px] rounded tag-gold"
+                className="px-1.5 py-0.5 text-[10px] rounded bg-gold/20 text-gold border border-gold/30"
               >
                 {tag}
               </span>
