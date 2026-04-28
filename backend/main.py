@@ -8,14 +8,14 @@ import random
 from pathlib import Path
 from typing import List, Dict, Any, Tuple
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 
 # ============ 配置 ============
 
 DATA_PATH = Path(__file__).parent.parent / "data" / "players.json"
 
-# 抽卡概率分布
+# 抽卡概率分布 (娱乐向)
 DRAW_PROBABILITIES = {
     "SSS": 0.10,
     "SS": 0.20,
@@ -36,7 +36,7 @@ RATING_COLORS = {
     "B": {"hex": "#4169E1", "name": "蓝色"},
 }
 
-RATING_ORDER = ["SSS", "SS", "S", "A", "B"]  # 从高到低
+RATING_ORDER = ["SSS", "SS", "S", "A", "B"]
 POSITIONS = ["上单", "打野", "中单", "下路", "辅助"]
 
 
@@ -70,25 +70,10 @@ def find_player_by_rating(
     position: str, 
     target_rating: str
 ) -> Tuple[Dict, str]:
-    """
-    查找指定位置和目标评级的选手
-    如果找不到，降级查找
-    返回：(选手, 实际评级)
-    """
+    """查找指定位置和目标评级的选手，降级查找"""
     position_players = [p for p in players if p.get("position") == position]
     
-    # 按评级顺序查找（目标评级 -> 降级）
-    for rating in RATING_ORDER:
-        if rating == target_rating:
-            # 目标评级
-            available = [p for p in position_players if 
-                        any(v["rating"] == rating for v in p.get("versions", []))]
-            if available:
-                return random.choice(available), rating
-        else:
-            continue
-    
-    # 降级查找
+    # 按评级顺序查找
     for rating in RATING_ORDER:
         if rating == target_rating:
             continue
@@ -101,9 +86,7 @@ def find_player_by_rating(
 
 
 def draw_with_probability(players_data: Dict[str, Any]) -> List[Dict[str, Any]]:
-    """
-    基于概率分布抽取6个选手
-    """
+    """基于概率分布抽取6个选手"""
     players = players_data["players"]
     drawn = []
     
@@ -139,16 +122,10 @@ def draw_with_probability(players_data: Dict[str, Any]) -> List[Dict[str, Any]]:
 
 
 def assign_lineup(drawn: List[Dict[str, Any]]) -> Dict[str, Any]:
-    """
-    阵容分配逻辑：
-    1. 检查是否有重复位置
-    2. 如果有，评分低的自动进入替补
-    3. 如果没有重复，评分最低的进入替补
-    """
+    """阵容分配逻辑"""
     starters = []
     substitutes = []
     
-    # 统计位置出现次数
     position_count: Dict[str, List[Dict]] = {}
     for player in drawn:
         pos = player["position"]
@@ -156,32 +133,23 @@ def assign_lineup(drawn: List[Dict[str, Any]]) -> Dict[str, Any]:
             position_count[pos] = []
         position_count[pos].append(player)
     
-    # 检查是否有重复位置
     has_duplicate = any(len(v) > 1 for v in position_count.values())
     
     if has_duplicate:
-        # 有重复位置：评分低的进入替补
-        # 首先选择位置数量>1的重复位置
         duplicate_players = []
         for pos, players in position_count.items():
             if len(players) > 1:
                 duplicate_players.extend(players)
-        
-        # 按评分排序，最低分进替补
         duplicate_players.sort(key=lambda x: x["raw_rating"])
         substitutes.append(duplicate_players[0])
-        
-        # 其他人都是主力
         for player in drawn:
             if player not in substitutes:
                 starters.append(player)
     else:
-        # 没有重复位置：评分最低的进替补
         sorted_players = sorted(drawn, key=lambda x: x["raw_rating"])
         substitutes.append(sorted_players[0])
         starters.extend(sorted_players[1:])
     
-    # 按位置顺序排列主力
     position_order = {pos: i for i, pos in enumerate(POSITIONS)}
     starters.sort(key=lambda x: position_order.get(x["position"], 99))
     
@@ -192,10 +160,7 @@ def assign_lineup(drawn: List[Dict[str, Any]]) -> Dict[str, Any]:
 
 
 def aggregate_synergies(lineup: Dict[str, Any]) -> List[Dict[str, Any]]:
-    """
-    羁绊聚合
-    统计所有选手标签出现次数，2个及以上触发羁绊
-    """
+    """羁绊聚合"""
     tag_count: Dict[str, int] = {}
     
     for player in lineup["starters"] + lineup["substitutes"]:
@@ -205,33 +170,23 @@ def aggregate_synergies(lineup: Dict[str, Any]) -> List[Dict[str, Any]]:
     synergies = []
     for tag, count in tag_count.items():
         if count >= 2:
-            synergies.append({
-                "tag": tag,
-                "count": count
-            })
+            synergies.append({"tag": tag, "count": count})
     
     synergies.sort(key=lambda x: x["count"], reverse=True)
     return synergies
 
 
 def calculate_lineup_score(lineup: Dict[str, Any]) -> Dict[str, Any]:
-    """
-    计算阵容评分
-    - 主力权重: 1.0
-    - 替补权重: 0.5
-    """
+    """计算阵容评分 - 满分30分"""
     starters = lineup["starters"]
     substitutes = lineup["substitutes"]
     
     starter_score = sum(p["raw_rating"] for p in starters)
-    substitute_score = sum(p["raw_rating"] for p in substitutes) * 0.5
+    substitute_score = sum(p["raw_rating"] for p in substitutes)  # 权重1.0
     
     total_score = starter_score + substitute_score
+    max_score = 30  # 6 × 5 = 30
     
-    # 最大可能分数
-    max_score = 5 * 5 + 5 * 0.5  # 5个主力(SSS) + 1个替补(SSS)*0.5
-    
-    # 转换为字母评级
     ratio = total_score / max_score
     if ratio >= 0.9:
         grade = "SSS"
@@ -249,12 +204,12 @@ def calculate_lineup_score(lineup: Dict[str, Any]) -> Dict[str, Any]:
         "max_score": max_score,
         "grade": grade,
         "starter_score": starter_score,
-        "substitute_score": round(substitute_score, 2)
+        "substitute_score": substitute_score
     }
 
 
 def do_draw() -> Dict[str, Any]:
-    """执行抽卡"""
+    """执行单次抽卡"""
     players_data = load_players_data()
     drawn = draw_with_probability(players_data)
     lineup = assign_lineup(drawn)
@@ -268,12 +223,26 @@ def do_draw() -> Dict[str, Any]:
     }
 
 
+def do_draw10() -> List[Dict[str, Any]]:
+    """执行十连抽"""
+    results = []
+    for i in range(10):
+        result = do_draw()
+        result["index"] = i + 1
+        results.append(result)
+    
+    # 按评分降序排列
+    results.sort(key=lambda x: x["score"]["total_score"], reverse=True)
+    
+    return results
+
+
 # ============ FastAPI 应用 ============
 
 app = FastAPI(
     title="海克斯盲盒抽卡系统",
     description="英雄联盟传奇选手盲盒抽卡后端服务",
-    version="2.0.0"
+    version="3.0.0"
 )
 
 app.add_middleware(
@@ -287,15 +256,29 @@ app.add_middleware(
 
 @app.get("/")
 async def root():
-    return {"status": "ok", "service": "hextech-blind-box", "version": "2.0.0"}
+    return {"status": "ok", "service": "hextech-blind-box", "version": "3.0.0"}
 
 
 @app.get("/api/draw")
-async def draw_api():
-    """抽卡接口"""
+async def draw_api(count: int = Query(default=1, ge=1, le=10)):
+    """抽卡接口 - 支持单抽和十连"""
     try:
-        result = do_draw()
-        return {"success": True, "data": result}
+        if count == 1:
+            result = do_draw()
+            return {"success": True, "data": result}
+        else:
+            results = do_draw10()
+            return {"success": True, "data": {"draws": results}}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/draw10")
+async def draw10_api():
+    """十连抽接口"""
+    try:
+        results = do_draw10()
+        return {"success": True, "data": {"draws": results}}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
