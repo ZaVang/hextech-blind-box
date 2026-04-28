@@ -17,11 +17,11 @@ DATA_PATH = Path(__file__).parent.parent / "data" / "players.json"
 
 # 抽卡概率分布
 DRAW_PROBABILITIES = {
-    "SSS": 0.03,
-    "SS": 0.10,
-    "S": 0.25,
-    "A": 0.40,
-    "B": 0.22,
+    "SSS": 0.10,
+    "SS": 0.20,
+    "S": 0.40,
+    "A": 0.20,
+    "B": 0.10,
 }
 
 # 评级分值

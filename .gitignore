@@ -1,15 +1,25 @@
 # Python
 __pycache__/
 *.py[cod]
-*$py.class
-*.so
+*.pyo
+*.pyd
 .Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
 .env
-.venv
+venv/
+.venv/
+ENV/
 
 # IDE
-.idea/
 .vscode/
+.idea/
+*.swp
+*.swo
+*~
 
 # OS
 .DS_Store
