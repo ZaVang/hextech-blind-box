@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 """
-海克斯盲盒抽卡 CLI 工具
+海克斯盲盒抽卡 CLI 工具 v2.0
 用法:
   python cli.py           # 直接抽卡
   python cli.py --backend # 调用 API 抽卡
 """
 
 import argparse
-import json
 import sys
 from pathlib import Path
 
@@ -15,11 +14,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 from main import (
-    load_players_data,
-    draw_lineup,
-    aggregate_synergies,
-    calculate_lineup_score,
-    RATING_SCORES
+    do_draw,
+    RATING_COLORS,
+    DRAW_PROBABILITIES
 )
 
 # 位置显示映射
@@ -31,84 +28,117 @@ POSITION_DISPLAY = {
     "辅助": "SUP"
 }
 
-RATING_COLORS = {
-    "SSS": "\033[95m",  # 紫色
-    "SS": "\033[94m",   # 蓝色
-    "S": "\033[92m",    # 绿色
-    "A": "\033[93m",    # 黄色
-    "B": "\033[90m",    # 灰色
+# ANSI 颜色码
+ANSI_COLORS = {
+    "SSS": "\033[38;2;255;215;0m",    # 金色 RGB
+    "SS": "\033[38;2;255;105;180m",   # 粉色 RGB
+    "S": "\033[38;2;255;140;0m",       # 橙色 RGB
+    "A": "\033[38;2;147;112;219m",    # 紫色 RGB
+    "B": "\033[38;2;65;105;225m",     # 蓝色 RGB
 }
 RESET = "\033[0m"
 
 
-def format_rating(rating: str) -> str:
-    """格式化评级显示"""
-    color = RATING_COLORS.get(rating, "")
-    return f"{color}[{rating}]{RESET}"
+def colorize(text: str, rating: str) -> str:
+    """为文本添加颜色"""
+    color = ANSI_COLORS.get(rating, "")
+    return f"{color}{text}{RESET}"
+
+
+def format_rating_badge(rating: str) -> str:
+    """格式化评级徽章"""
+    return colorize(f"[{rating}]", rating)
+
+
+def format_line(char: str, length: int = 55) -> str:
+    """格式化分隔线"""
+    return colorize(char * length, "B")
 
 
 def display_lineup(lineup: dict, synergies: list, score: dict):
     """格式化展示阵容"""
-    print("\n" + "=" * 60)
-    print("🎰 海克斯盲盒 - 传奇阵容 🎰")
-    print("=" * 60)
+    
+    # 头部
+    print()
+    print(format_line("="))
+    print(colorize("  🎰  海克斯盲盒 - 传奇阵容  🎰", "SSS"))
+    print(format_line("="))
+    
+    # 概率提示
+    print("\n  抽卡概率: ", end="")
+    probs_str = " | ".join([f"{r}:{int(DRAW_PROBABILITIES[r]*100)}%" 
+                            for r in ["SSS", "SS", "S", "A", "B"]])
+    print(colorize(probs_str, "A"))
     
     # 主力阵容
-    print("\n📋 【主力阵容】")
-    print("-" * 40)
+    print("\n  📋 【主力阵容】")
+    print(colorize("  " + "-" * 55, "B"))
+    header = f"  {'位置':6} {'选手':14} {'战队':10} {'版本':10} {'评级':8}"
+    print(colorize(header, "A"))
+    sep = f"  {'-'*6} {'-'*14} {'-'*10} {'-'*10} {'-'*8}"
+    print(colorize(sep, "B"))
+    
     for player in lineup["starters"]:
         pos = POSITION_DISPLAY.get(player["position"], player["position"])
-        print(f"  {pos:4} | {player['name']:12} | {player['team']:8} | "
-              f"{player['era']:8} | {format_rating(player['rating'])}")
+        r = player["rating"]
+        line = f"  {colorize(pos, r):6} {player['name']:14} {player['team']:10} {player['era']:10} {format_rating_badge(r):10}"
+        print(line)
+    
+    # 标签展示
+    print(colorize("  " + "-" * 55, "B"))
+    tags_line = "  标签: " + ", ".join([
+        colorize(t, lineup["starters"][0]["rating"]) 
+        for t in lineup["starters"][0]["tags"][:3]
+    ])
+    print(tags_line)
     
     # 替补
-    print("\n🪑 【替补】")
-    print("-" * 40)
+    print()
+    print(f"  🪑 【替补】")
+    print(colorize("  " + "-" * 55, "B"))
+    
     for player in lineup["substitutes"]:
         pos = POSITION_DISPLAY.get(player["position"], player["position"])
-        print(f"  {pos:4} | {player['name']:12} | {player['team']:8} | "
-              f"{player['era']:8} | {format_rating(player['rating'])}")
+        r = player["rating"]
+        tags = ", ".join(player["tags"][:2]) if player["tags"] else ""
+        line = f"  {colorize(pos, r):6} {player['name']:14} {player['team']:10} {player['era']:10} {format_rating_badge(r):10}"
+        print(line)
+        if tags:
+            print(f"       {colorize(tags, 'B')}")
     
-    # 羁绊
+    # 羁绊效果
+    print()
     if synergies:
-        print("\n⚡ 【羁绊效果】")
-        print("-" * 40)
+        print(f"  ⚡ 【羁绊效果】")
+        print(colorize("  " + "-" * 55, "B"))
         for syn in synergies:
-            print(f"  ✦ {syn['tag']} (x{syn['count']})")
+            desc = f"({syn['count']}人)"
+            print(f"  {colorize('✦', 'S')} {colorize(syn['tag'], 'S')} {colorize(desc, 'A')}")
     else:
-        print("\n⚡ 【羁绊效果】")
-        print("  暂无触发羁绊")
+        print(f"  ⚡ 【羁绊效果】")
+        print(colorize("  " + "-" * 55, "B"))
+        print(f"  {colorize('暂无触发羁绊', 'B')}")
     
     # 评分
-    print("\n🏆 【阵容评级】")
-    print("-" * 40)
-    grade_color = RATING_COLORS.get(score["grade"], "")
-    print(f"  综合评级: {grade_color}[{score['grade']}]{RESET}")
-    print(f"  总得分: {score['total_score']}/{score['max_score']}")
+    print(f"\n  🏆 【阵容评级】")
+    print(colorize("  " + "-" * 55, "B"))
+    grade = score["grade"]
+    stars = "★" * min(3, ["B", "A", "S", "SS", "SSS"].index(grade) + 1)
+    print(f"  综合评级: {format_rating_badge(grade)} {colorize(stars, grade)}")
+    print(f"  总得分: {colorize(str(score['total_score']), grade)}/{score['max_score']}")
     print(f"  主力贡献: {score['starter_score']}")
     print(f"  替补贡献: {score['substitute_score']}")
     
-    print("\n" + "=" * 60 + "\n")
+    print(format_line("="))
+    print()
 
 
 def cli_draw():
     """本地直接抽卡"""
     try:
-        players_data = load_players_data()
-        lineup = draw_lineup(players_data)
-        synergies = aggregate_synergies(lineup)
-        score = calculate_lineup_score(lineup)
-        
-        display_lineup(lineup, synergies, score)
-        
-        # 同时输出 JSON 格式
-        result = {
-            "lineup": lineup,
-            "synergies": synergies,
-            "score": score
-        }
+        result = do_draw()
+        display_lineup(result["lineup"], result["synergies"], result["score"])
         return result
-        
     except Exception as e:
         print(f"❌ 抽卡失败: {e}", file=sys.stderr)
         sys.exit(1)
@@ -135,13 +165,13 @@ def api_draw():
         sys.exit(1)
     except Exception as e:
         print(f"❌ API 调用失败: {e}", file=sys.stderr)
-        print("   请确保后端服务已启动 (python main.py)", file=sys.stderr)
+        print("   请确保后端服务已启动 (uvicorn main:app --port 8000)", file=sys.stderr)
         sys.exit(1)
 
 
 def main():
     parser = argparse.ArgumentParser(
-        description="海克斯盲盒抽卡 CLI 工具",
+        description="海克斯盲盒抽卡 CLI 工具 v2.0",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 示例:
