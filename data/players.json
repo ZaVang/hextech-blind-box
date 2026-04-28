@@ -1,0 +1,2716 @@
+{
+  "meta": {
+    "version": "2.0",
+    "description": "英雄联盟传奇选手盲盒数据库 - 分版本结构",
+    "created": "2026-04-28",
+    "note": "同一选手不同时期可以有不同评级和标签"
+  },
+  "positions": ["上单", "打野", "中单", "下路", "辅助"],
+  "ratings": ["B", "A", "S", "SS", "SSS"],
+  "synergies": {
+    "SKT血脉": "效力过SKT/T1的选手",
+    "神经刀": "状态起伏大，上限下限都很极端",
+    "大赛软脚虾": "关键时刻容易拉胯",
+    "大核": "队伍核心，需要资源倾斜",
+    "操作型": "以操作见长",
+    "压制力": "对线期能压制对手",
+    "单挑王": "1v1能力极强",
+    "天赋怪": "天才型选手",
+    "黑马": "不被看好却爆发的选手",
+    "冰岛往事": "2021 S赛冰岛相关惨案",
+    "节奏大师": "带节奏能力强",
+    "兔宝": "Caps专属",
+    "狗儿子": "Kid专属梗",
+    "农夫山泉": "Kid专属梗",
+    "排位战神": "排位猛比赛拉",
+    "渡劫": "经历过重大挫折",
+    "流星": "短暂闪耀后消失",
+    "神王降世": "Zeus专属",
+    "此志无双": "DRX夺冠故事",
+    "搏至无憾": "JKL专属",
+    "60E": "WE粉丝梗",
+    "顶级蓝领": "不抢资源默默奉献",
+    "老将": "职业生涯长",
+    "冠军血脉": "拿过S赛冠军",
+    "无冕之王": "实力强但没S冠",
+    "绝境之王": "逆风局能力强",
+    "gambler": "敢打敢拼",
+    "FMVP": "总决赛最有价值球员",
+    "天才少年": "出道即巅峰的年轻选手",
+    "院长": "队伍绝对核心，带飞队友",
+    "乐观家族": "Doinb相关",
+    "抗韩奇侠": "对LCK战队有出色表现"
+  },
+  "players": [
+    {
+      "name": "Faker",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2013",
+          "team": "SKT",
+          "rating": "SSS",
+          "tags": ["SKT血脉", "冠军血脉", "操作型", "天才少年"]
+        },
+        {
+          "era": "2015-2016",
+          "team": "SKT",
+          "rating": "SSS",
+          "tags": ["SKT血脉", "冠军血脉", "操作型", "大核"]
+        },
+        {
+          "era": "2017",
+          "team": "SKT",
+          "rating": "SS",
+          "tags": ["SKT血脉", "大核"]
+        },
+        {
+          "era": "2023",
+          "team": "T1",
+          "rating": "SSS",
+          "tags": ["SKT血脉", "冠军血脉", "老将", "大核"]
+        }
+      ]
+    },
+    {
+      "name": "Zeus",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2022",
+          "team": "T1",
+          "rating": "SS",
+          "tags": ["SKT血脉", "操作型", "天赋怪"]
+        },
+        {
+          "era": "2023",
+          "team": "T1",
+          "rating": "SSS",
+          "tags": ["SKT血脉", "神王降世", "压制力", "操作型", "冠军血脉"]
+        },
+        {
+          "era": "2024",
+          "team": "T1",
+          "rating": "SSS",
+          "tags": ["SKT血脉", "神王降世", "冠军血脉", "压制力"]
+        }
+      ]
+    },
+    {
+      "name": "Oner",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2022",
+          "team": "T1",
+          "rating": "SS",
+          "tags": ["SKT血脉", "节奏大师"]
+        },
+        {
+          "era": "2023",
+          "team": "T1",
+          "rating": "SS",
+          "tags": ["SKT血脉", "节奏大师", "冠军血脉"]
+        },
+        {
+          "era": "2024",
+          "team": "T1",
+          "rating": "SS",
+          "tags": ["SKT血脉", "节奏大师", "冠军血脉"]
+        }
+      ]
+    },
+    {
+      "name": "Gumayusi",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2022",
+          "team": "T1",
+          "rating": "S",
+          "tags": ["SKT血脉", "操作型"]
+        },
+        {
+          "era": "2023",
+          "team": "T1",
+          "rating": "SS",
+          "tags": ["SKT血脉", "操作型", "冠军血脉", "压制力"]
+        },
+        {
+          "era": "2024",
+          "team": "T1",
+          "rating": "SS",
+          "tags": ["SKT血脉", "操作型", "冠军血脉"]
+        }
+      ]
+    },
+    {
+      "name": "Keria",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2022",
+          "team": "T1",
+          "rating": "SS",
+          "tags": ["SKT血脉", "天赋怪", "操作型"]
+        },
+        {
+          "era": "2023",
+          "team": "T1",
+          "rating": "SSS",
+          "tags": ["SKT血脉", "天赋怪", "操作型", "冠军血脉"]
+        },
+        {
+          "era": "2024",
+          "team": "T1",
+          "rating": "SSS",
+          "tags": ["SKT血脉", "天赋怪", "操作型", "冠军血脉"]
+        }
+      ]
+    },
+    {
+      "name": "Chovy",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2019-2020",
+          "team": "GRF",
+          "rating": "S",
+          "tags": ["操作型", "天赋怪", "大核"]
+        },
+        {
+          "era": "2023",
+          "team": "Gen.G",
+          "rating": "SS",
+          "tags": ["操作型", "大核", "天赋怪"]
+        },
+        {
+          "era": "2024-2025",
+          "team": "Gen.G",
+          "rating": "SSS",
+          "tags": ["操作型", "大核", "天赋怪", "冠军血脉"]
+        }
+      ]
+    },
+    {
+      "name": "Ruler",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2017",
+          "team": "SSG",
+          "rating": "SS",
+          "tags": ["冠军血脉", "大核", "操作型", "FMVP"]
+        },
+        {
+          "era": "2023",
+          "team": "JDG",
+          "rating": "SSS",
+          "tags": ["大核", "操作型"]
+        },
+        {
+          "era": "2024",
+          "team": "Gen.G",
+          "rating": "SS",
+          "tags": ["大核", "操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Kiin",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2018",
+          "team": "AFs",
+          "rating": "S",
+          "tags": ["操作型", "单挑王"]
+        },
+        {
+          "era": "2024-2025",
+          "team": "Gen.G",
+          "rating": "SS",
+          "tags": ["压制力", "操作型", "冠军血脉"]
+        }
+      ]
+    },
+    {
+      "name": "Canyon",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2020",
+          "team": "DWG",
+          "rating": "SSS",
+          "tags": ["冠军血脉", "操作型", "天赋怪", "FMVP"]
+        },
+        {
+          "era": "2021-2022",
+          "team": "DK",
+          "rating": "SSS",
+          "tags": ["操作型", "天赋怪", "节奏大师"]
+        },
+        {
+          "era": "2024-2025",
+          "team": "Gen.G",
+          "rating": "SSS",
+          "tags": ["操作型", "天赋怪", "节奏大师", "冠军血脉"]
+        }
+      ]
+    },
+    {
+      "name": "ShowMaker",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2020",
+          "team": "DWG",
+          "rating": "SSS",
+          "tags": ["冠军血脉", "操作型", "天赋怪"]
+        },
+        {
+          "era": "2021-2023",
+          "team": "DK",
+          "rating": "SS",
+          "tags": ["操作型", "天赋怪", "神经刀"]
+        }
+      ]
+    },
+    {
+      "name": "Uzi",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2013",
+          "team": "RYL",
+          "rating": "SS",
+          "tags": ["无冕之王", "大核", "操作型", "天才少年"]
+        },
+        {
+          "era": "2018",
+          "team": "RNG",
+          "rating": "SSS",
+          "tags": ["无冕之王", "大核", "操作型", "压制力"]
+        }
+      ]
+    },
+    {
+      "name": "Caps",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2018",
+          "team": "FNC",
+          "rating": "SS",
+          "tags": ["兔宝", "操作型", "天赋怪"]
+        },
+        {
+          "era": "2019",
+          "team": "G2",
+          "rating": "SSS",
+          "tags": ["兔宝", "操作型", "天赋怪", "神经刀"]
+        },
+        {
+          "era": "2023-2024",
+          "team": "G2",
+          "rating": "S",
+          "tags": ["兔宝", "操作型", "神经刀"]
+        }
+      ]
+    },
+    {
+      "name": "Perkz",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2019",
+          "team": "G2",
+          "rating": "SS",
+          "tags": ["操作型", "天赋怪"]
+        }
+      ]
+    },
+    {
+      "name": "TheShy",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2018",
+          "team": "iG",
+          "rating": "SSS",
+          "tags": ["冠军血脉", "单挑王", "操作型", "天赋怪", "压制力"]
+        },
+        {
+          "era": "2019",
+          "team": "iG",
+          "rating": "SSS",
+          "tags": ["冠军血脉", "单挑王", "操作型", "神经刀"]
+        },
+        {
+          "era": "2020-2023",
+          "team": "WBG",
+          "rating": "S",
+          "tags": ["单挑王", "神经刀", "大赛软脚虾"]
+        }
+      ]
+    },
+    {
+      "name": "Rookie",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2018",
+          "team": "iG",
+          "rating": "SSS",
+          "tags": ["冠军血脉", "操作型", "天赋怪", "FMVP"]
+        },
+        {
+          "era": "2019-2020",
+          "team": "iG",
+          "rating": "SS",
+          "tags": ["冠军血脉", "操作型"]
+        }
+      ]
+    },
+    {
+      "name": "JackeyLove",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2018",
+          "team": "iG",
+          "rating": "SS",
+          "tags": ["冠军血脉", "搏至无憾", "操作型", "天才少年"]
+        },
+        {
+          "era": "2020",
+          "team": "TES",
+          "rating": "SS",
+          "tags": ["搏至无憾", "操作型", "gambler"]
+        },
+        {
+          "era": "2023-2024",
+          "team": "TES",
+          "rating": "SS",
+          "tags": ["搏至无憾", "操作型", "gambler"]
+        }
+      ]
+    },
+    {
+      "name": "Ning",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2018",
+          "team": "iG",
+          "rating": "SS",
+          "tags": ["冠军血脉", "节奏大师", "FMVP"]
+        },
+        {
+          "era": "2019",
+          "team": "iG",
+          "rating": "S",
+          "tags": ["冠军血脉", "神经刀", "节奏大师"]
+        }
+      ]
+    },
+    {
+      "name": "Baolan",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2018",
+          "team": "iG",
+          "rating": "A",
+          "tags": ["冠军血脉", "顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "Doinb",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2019",
+          "team": "FPX",
+          "rating": "SSS",
+          "tags": ["冠军血脉", "节奏大师", "乐观家族"]
+        },
+        {
+          "era": "2021",
+          "team": "FPX",
+          "rating": "SS",
+          "tags": ["节奏大师", "乐观家族", "冰岛往事"]
+        }
+      ]
+    },
+    {
+      "name": "Tian",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2019",
+          "team": "FPX",
+          "rating": "SSS",
+          "tags": ["冠军血脉", "节奏大师", "操作型", "FMVP"]
+        },
+        {
+          "era": "2021",
+          "team": "FPX",
+          "rating": "S",
+          "tags": ["冰岛往事", "神经刀", "节奏大师"]
+        },
+        {
+          "era": "2023-2024",
+          "team": "TES",
+          "rating": "SS",
+          "tags": ["节奏大师", "神经刀"]
+        }
+      ]
+    },
+    {
+      "name": "Lwx",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2019",
+          "team": "FPX",
+          "rating": "S",
+          "tags": ["冠军血脉", "顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "Crisp",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2019",
+          "team": "FPX",
+          "rating": "SS",
+          "tags": ["冠军血脉", "操作型"]
+        }
+      ]
+    },
+    {
+      "name": "GimGoon",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2019",
+          "team": "FPX",
+          "rating": "A",
+          "tags": ["冠军血脉", "顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "Scout",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2021",
+          "team": "EDG",
+          "rating": "SSS",
+          "tags": ["冠军血脉", "操作型", "大核", "FMVP"]
+        },
+        {
+          "era": "2023",
+          "team": "LNG",
+          "rating": "SS",
+          "tags": ["操作型", "大核"]
+        }
+      ]
+    },
+    {
+      "name": "Viper",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2021",
+          "team": "EDG",
+          "rating": "SS",
+          "tags": ["冠军血脉", "操作型"]
+        },
+        {
+          "era": "2024",
+          "team": "HLE",
+          "rating": "SS",
+          "tags": ["操作型", "大核"]
+        }
+      ]
+    },
+    {
+      "name": "Meiko",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2021",
+          "team": "EDG",
+          "rating": "SS",
+          "tags": ["冠军血脉", "老将", "顶级蓝领"]
+        },
+        {
+          "era": "2023-2024",
+          "team": "TES",
+          "rating": "S",
+          "tags": ["老将", "顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "Flandre",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2021",
+          "team": "EDG",
+          "rating": "S",
+          "tags": ["冠军血脉", "老将"]
+        }
+      ]
+    },
+    {
+      "name": "Jiejie",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2021",
+          "team": "EDG",
+          "rating": "SS",
+          "tags": ["冠军血脉", "节奏大师"]
+        },
+        {
+          "era": "2023",
+          "team": "EDG",
+          "rating": "S",
+          "tags": ["节奏大师", "神经刀"]
+        }
+      ]
+    },
+    {
+      "name": "Deft",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2015",
+          "team": "EDG",
+          "rating": "SS",
+          "tags": ["大核", "操作型"]
+        },
+        {
+          "era": "2022",
+          "team": "DRX",
+          "rating": "SSS",
+          "tags": ["冠军血脉", "老将", "此志无双", "黑马", "大核"]
+        },
+        {
+          "era": "2024",
+          "team": "HLE",
+          "rating": "SS",
+          "tags": ["老将", "大核"]
+        }
+      ]
+    },
+    {
+      "name": "Pyosik",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2022",
+          "team": "DRX",
+          "rating": "SS",
+          "tags": ["冠军血脉", "神经刀", "此志无双", "黑马"]
+        },
+        {
+          "era": "2024",
+          "team": "KT",
+          "rating": "S",
+          "tags": ["神经刀", "节奏大师"]
+        }
+      ]
+    },
+    {
+      "name": "Zeka",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2022",
+          "team": "DRX",
+          "rating": "SSS",
+          "tags": ["冠军血脉", "黑马", "天赋怪", "FMVP"]
+        },
+        {
+          "era": "2024-2025",
+          "team": "HLE",
+          "rating": "SS",
+          "tags": ["操作型", "天赋怪"]
+        }
+      ]
+    },
+    {
+      "name": "Kingen",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2022",
+          "team": "DRX",
+          "rating": "SS",
+          "tags": ["冠军血脉", "黑马", "绝境之王", "FMVP"]
+        },
+        {
+          "era": "2024",
+          "team": "HLE",
+          "rating": "A",
+          "tags": ["大赛软脚虾"]
+        }
+      ]
+    },
+    {
+      "name": "BeryL",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2020",
+          "team": "DK",
+          "rating": "SS",
+          "tags": ["冠军血脉"]
+        },
+        {
+          "era": "2022",
+          "team": "DRX",
+          "rating": "SS",
+          "tags": ["冠军血脉", "此志无双"]
+        }
+      ]
+    },
+    {
+      "name": "Knight",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2020",
+          "team": "TES",
+          "rating": "SS",
+          "tags": ["天赋怪", "操作型", "大核"]
+        },
+        {
+          "era": "2023",
+          "team": "JDG",
+          "rating": "SSS",
+          "tags": ["天赋怪", "操作型", "大核"]
+        },
+        {
+          "era": "2024",
+          "team": "BLG",
+          "rating": "SSS",
+          "tags": ["天赋怪", "操作型", "大核"]
+        }
+      ]
+    },
+    {
+      "name": "Kanavi",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2023",
+          "team": "JDG",
+          "rating": "SSS",
+          "tags": ["节奏大师", "操作型", "FMVP"]
+        },
+        {
+          "era": "2024-2025",
+          "team": "HLE",
+          "rating": "SS",
+          "tags": ["节奏大师", "操作型"]
+        }
+      ]
+    },
+    {
+      "name": "369",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2020",
+          "team": "TES",
+          "rating": "S",
+          "tags": ["操作型", "神经刀"]
+        },
+        {
+          "era": "2023",
+          "team": "JDG",
+          "rating": "SS",
+          "tags": ["操作型", "压制力"]
+        },
+        {
+          "era": "2024",
+          "team": "TES",
+          "rating": "SS",
+          "tags": ["操作型", "压制力"]
+        }
+      ]
+    },
+    {
+      "name": "Missing",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2023",
+          "team": "JDG",
+          "rating": "S",
+          "tags": ["顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "Bin",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2020",
+          "team": "SN",
+          "rating": "SS",
+          "tags": ["单挑王", "操作型", "天赋怪"]
+        },
+        {
+          "era": "2023",
+          "team": "BLG",
+          "rating": "SS",
+          "tags": ["单挑王", "操作型", "天赋怪", "抗韩奇侠"]
+        },
+        {
+          "era": "2024",
+          "team": "BLG",
+          "rating": "SSS",
+          "tags": ["单挑王", "操作型", "天赋怪", "抗韩奇侠"]
+        }
+      ]
+    },
+    {
+      "name": "Elk",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2023",
+          "team": "BLG",
+          "rating": "SS",
+          "tags": ["操作型", "压制力", "抗韩奇侠"]
+        },
+        {
+          "era": "2024",
+          "team": "BLG",
+          "rating": "SSS",
+          "tags": ["操作型", "压制力", "抗韩奇侠"]
+        }
+      ]
+    },
+    {
+      "name": "Xun",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2023",
+          "team": "BLG",
+          "rating": "SS",
+          "tags": ["节奏大师", "神经刀"]
+        },
+        {
+          "era": "2024",
+          "team": "BLG",
+          "rating": "SS",
+          "tags": ["节奏大师", "神经刀"]
+        }
+      ]
+    },
+    {
+      "name": "On",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2023-2024",
+          "team": "BLG",
+          "rating": "S",
+          "tags": ["操作型", "抗韩奇侠"]
+        }
+      ]
+    },
+    {
+      "name": "Pawn",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2014",
+          "team": "SSW",
+          "rating": "SS",
+          "tags": ["冠军血脉", "单挑王", "天赋怪", "操作型"]
+        },
+        {
+          "era": "2015",
+          "team": "EDG",
+          "rating": "SS",
+          "tags": ["单挑王", "天赋怪", "操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Mata",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2014",
+          "team": "SSW",
+          "rating": "SSS",
+          "tags": ["冠军血脉", "FMVP"]
+        }
+      ]
+    },
+    {
+      "name": "Imp",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2014",
+          "team": "SSW",
+          "rating": "SS",
+          "tags": ["冠军血脉", "神经刀"]
+        }
+      ]
+    },
+    {
+      "name": "Looper",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2014",
+          "team": "SSW",
+          "rating": "S",
+          "tags": ["冠军血脉", "顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "DanDy",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2014",
+          "team": "SSW",
+          "rating": "S",
+          "tags": ["冠军血脉", "节奏大师"]
+        }
+      ]
+    },
+    {
+      "name": "Bang",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2015-2016",
+          "team": "SKT",
+          "rating": "SS",
+          "tags": ["SKT血脉", "冠军血脉", "大核"]
+        },
+        {
+          "era": "2017",
+          "team": "SKT",
+          "rating": "SS",
+          "tags": ["SKT血脉", "冠军血脉", "大核"]
+        }
+      ]
+    },
+    {
+      "name": "Wolf",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2015-2017",
+          "team": "SKT",
+          "rating": "SS",
+          "tags": ["SKT血脉", "冠军血脉"]
+        }
+      ]
+    },
+    {
+      "name": "Marin",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2015",
+          "team": "SKT",
+          "rating": "SS",
+          "tags": ["SKT血脉", "冠军血脉", "操作型", "FMVP"]
+        }
+      ]
+    },
+    {
+      "name": "Bengi",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2013-2016",
+          "team": "SKT",
+          "rating": "SS",
+          "tags": ["SKT血脉", "冠军血脉", "节奏大师"]
+        }
+      ]
+    },
+    {
+      "name": "Duke",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2016",
+          "team": "SKT",
+          "rating": "SS",
+          "tags": ["SKT血脉", "冠军血脉", "顶级蓝领"]
+        },
+        {
+          "era": "2018",
+          "team": "iG",
+          "rating": "S",
+          "tags": ["冠军血脉", "顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "Peanut",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2016",
+          "team": "ROX",
+          "rating": "SS",
+          "tags": ["节奏大师", "操作型"]
+        },
+        {
+          "era": "2017",
+          "team": "SKT",
+          "rating": "SS",
+          "tags": ["SKT血脉", "节奏大师"]
+        },
+        {
+          "era": "2023-2025",
+          "team": "HLE/GEN",
+          "rating": "S",
+          "tags": ["节奏大师", "老将", "大赛软脚虾"]
+        }
+      ]
+    },
+    {
+      "name": "Khan",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2017-2018",
+          "team": "KZ",
+          "rating": "SS",
+          "tags": ["操作型", "单挑王"]
+        },
+        {
+          "era": "2021",
+          "team": "FPX",
+          "rating": "S",
+          "tags": ["操作型", "大赛软脚虾", "冰岛往事"]
+        }
+      ]
+    },
+    {
+      "name": "Teddy",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2018-2020",
+          "team": "SKT",
+          "rating": "S",
+          "tags": ["SKT血脉", "操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Effort",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2019-2020",
+          "team": "SKT",
+          "rating": "A",
+          "tags": ["SKT血脉", "流星"]
+        }
+      ]
+    },
+    {
+      "name": "Canna",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2020",
+          "team": "T1",
+          "rating": "A",
+          "tags": ["SKT血脉", "神经刀", "大赛软脚虾"]
+        },
+        {
+          "era": "2023",
+          "team": "KT",
+          "rating": "A",
+          "tags": ["神经刀"]
+        }
+      ]
+    },
+    {
+      "name": "Blank",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2016-2018",
+          "team": "SKT",
+          "rating": "A",
+          "tags": ["SKT血脉", "神经刀"]
+        }
+      ]
+    },
+    {
+      "name": "Kid",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2012-2014",
+          "team": "iG",
+          "rating": "B",
+          "tags": ["狗儿子", "农夫山泉", "排位战神"]
+        }
+      ]
+    },
+    {
+      "name": "Smlz",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2016-2018",
+          "team": "OMG/RW",
+          "rating": "B",
+          "tags": ["渡劫", "大核"]
+        }
+      ]
+    },
+    {
+      "name": "Ben",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2017",
+          "team": "WE",
+          "rating": "A",
+          "tags": ["60E", "顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "Xiye",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2017",
+          "team": "WE",
+          "rating": "S",
+          "tags": ["60E", "操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Mystic",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2017",
+          "team": "WE",
+          "rating": "S",
+          "tags": ["60E", "大核"]
+        }
+      ]
+    },
+    {
+      "name": "957",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2017",
+          "team": "WE",
+          "rating": "S",
+          "tags": ["60E", "顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "Condi",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2017",
+          "team": "WE",
+          "rating": "A",
+          "tags": ["60E", "节奏大师"]
+        }
+      ]
+    },
+    {
+      "name": "Clearlove",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2015",
+          "team": "EDG",
+          "rating": "SS",
+          "tags": ["老将", "节奏大师", "FMVP"]
+        }
+      ]
+    },
+    {
+      "name": "Weixiao",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2012-2013",
+          "team": "WE",
+          "rating": "S",
+          "tags": ["老将", "大核"]
+        }
+      ]
+    },
+    {
+      "name": "Gogoing",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2014",
+          "team": "OMG",
+          "rating": "SS",
+          "tags": ["操作型", "单挑王"]
+        }
+      ]
+    },
+    {
+      "name": "Loveling",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2014",
+          "team": "OMG",
+          "rating": "S",
+          "tags": ["节奏大师"]
+        }
+      ]
+    },
+    {
+      "name": "Cool",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2014",
+          "team": "OMG",
+          "rating": "SS",
+          "tags": ["操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Doublelift",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2015-2020",
+          "team": "TSM/TL",
+          "rating": "S",
+          "tags": ["操作型", "老将"]
+        }
+      ]
+    },
+    {
+      "name": "Bjergsen",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2014-2020",
+          "team": "TSM",
+          "rating": "SS",
+          "tags": ["操作型", "老将", "大核"]
+        }
+      ]
+    },
+    {
+      "name": "Jensen",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2016-2019",
+          "team": "C9/TL",
+          "rating": "S",
+          "tags": ["操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Sneaky",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2014-2018",
+          "team": "C9",
+          "rating": "S",
+          "tags": ["老将", "顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "Licorice",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2018",
+          "team": "C9",
+          "rating": "S",
+          "tags": ["操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Rekkles",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2015-2018",
+          "team": "FNC",
+          "rating": "SS",
+          "tags": ["大核", "老将"]
+        },
+        {
+          "era": "2021",
+          "team": "G2",
+          "rating": "S",
+          "tags": ["大核"]
+        }
+      ]
+    },
+    {
+      "name": "sOAZ",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2015",
+          "team": "FNC",
+          "rating": "S",
+          "tags": ["老将"]
+        }
+      ]
+    },
+    {
+      "name": "Huni",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2015",
+          "team": "FNC",
+          "rating": "SS",
+          "tags": ["操作型", "天赋怪"]
+        },
+        {
+          "era": "2017",
+          "team": "SKT",
+          "rating": "S",
+          "tags": ["SKT血脉", "操作型", "神经刀"]
+        }
+      ]
+    },
+    {
+      "name": "Yellowstar",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2015",
+          "team": "FNC",
+          "rating": "S",
+          "tags": ["老将"]
+        }
+      ]
+    },
+    {
+      "name": "Febiven",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2015",
+          "team": "FNC",
+          "rating": "S",
+          "tags": ["操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Broxah",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2018",
+          "team": "FNC",
+          "rating": "S",
+          "tags": ["节奏大师"]
+        }
+      ]
+    },
+    {
+      "name": "Bwipo",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2018",
+          "team": "FNC",
+          "rating": "S",
+          "tags": ["操作型", "神经刀"]
+        }
+      ]
+    },
+    {
+      "name": "Hylissang",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2018",
+          "team": "FNC",
+          "rating": "S",
+          "tags": ["操作型", "神经刀"]
+        }
+      ]
+    },
+    {
+      "name": "Wunder",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2019",
+          "team": "G2",
+          "rating": "SS",
+          "tags": ["操作型", "天赋怪"]
+        }
+      ]
+    },
+    {
+      "name": "Jankos",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2019",
+          "team": "G2",
+          "rating": "SS",
+          "tags": ["节奏大师", "老将"]
+        },
+        {
+          "era": "2023-2024",
+          "team": "G2",
+          "rating": "S",
+          "tags": ["节奏大师", "老将"]
+        }
+      ]
+    },
+    {
+      "name": "Mikyx",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2019",
+          "team": "G2",
+          "rating": "SS",
+          "tags": ["操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Xiaohu",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2018",
+          "team": "RNG",
+          "rating": "SS",
+          "tags": ["天赋怪", "操作型"]
+        },
+        {
+          "era": "2021",
+          "team": "RNG",
+          "rating": "SS",
+          "tags": ["天赋怪", "大核"]
+        },
+        {
+          "era": "2023",
+          "team": "WBG",
+          "rating": "S",
+          "tags": ["老将", "大核"]
+        }
+      ]
+    },
+    {
+      "name": "Ming",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2018",
+          "team": "RNG",
+          "rating": "SS",
+          "tags": ["顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "Karsa",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2018",
+          "team": "RNG",
+          "rating": "SS",
+          "tags": ["节奏大师"]
+        },
+        {
+          "era": "2020",
+          "team": "TES",
+          "rating": "SS",
+          "tags": ["节奏大师"]
+        }
+      ]
+    },
+    {
+      "name": "Letme",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2018",
+          "team": "RNG",
+          "rating": "A",
+          "tags": ["顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "Mlxg",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2018",
+          "team": "RNG",
+          "rating": "S",
+          "tags": ["节奏大师", "gambler"]
+        }
+      ]
+    },
+    {
+      "name": "Gala",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2021",
+          "team": "RNG",
+          "rating": "SS",
+          "tags": ["大核", "操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Wei",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2021",
+          "team": "RNG",
+          "rating": "SS",
+          "tags": ["节奏大师"]
+        },
+        {
+          "era": "2023",
+          "team": "BLG",
+          "rating": "S",
+          "tags": ["节奏大师"]
+        }
+      ]
+    },
+    {
+      "name": "Breathe",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2022",
+          "team": "RNG",
+          "rating": "S",
+          "tags": ["操作型"]
+        },
+        {
+          "era": "2024",
+          "team": "WBG",
+          "rating": "S",
+          "tags": ["操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Yagao",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2023",
+          "team": "JDG",
+          "rating": "S",
+          "tags": ["顶级蓝领"]
+        },
+        {
+          "era": "2024",
+          "team": "BLG",
+          "rating": "S",
+          "tags": ["顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "Nuguri",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2020",
+          "team": "DK",
+          "rating": "SSS",
+          "tags": ["冠军血脉", "操作型", "天赋怪", "单挑王"]
+        },
+        {
+          "era": "2021",
+          "team": "FPX",
+          "rating": "SS",
+          "tags": ["操作型", "天赋怪", "冰岛往事"]
+        }
+      ]
+    },
+    {
+      "name": "Ghost",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2020",
+          "team": "DK",
+          "rating": "S",
+          "tags": ["冠军血脉", "顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "Smeb",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2016",
+          "team": "ROX",
+          "rating": "SSS",
+          "tags": ["无冕之王", "单挑王", "操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Kuro",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2016",
+          "team": "ROX",
+          "rating": "S",
+          "tags": ["操作型"]
+        }
+      ]
+    },
+    {
+      "name": "PraY",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2016-2017",
+          "team": "ROX/KZ",
+          "rating": "S",
+          "tags": ["大核"]
+        }
+      ]
+    },
+    {
+      "name": "GorillA",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2016-2017",
+          "team": "ROX/KZ",
+          "rating": "S",
+          "tags": ["操作型"]
+        }
+      ]
+    },
+    {
+      "name": "CuVee",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2017",
+          "team": "SSG",
+          "rating": "SS",
+          "tags": ["冠军血脉", "操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Ambition",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2017",
+          "team": "SSG",
+          "rating": "SS",
+          "tags": ["冠军血脉", "老将", "节奏大师"]
+        }
+      ]
+    },
+    {
+      "name": "Crown",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2017",
+          "team": "SSG",
+          "rating": "SS",
+          "tags": ["冠军血脉", "操作型"]
+        }
+      ]
+    },
+    {
+      "name": "CoreJJ",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2017",
+          "team": "SSG",
+          "rating": "SS",
+          "tags": ["冠军血脉"]
+        }
+      ]
+    },
+    {
+      "name": "Angel",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2020",
+          "team": "SN",
+          "rating": "S",
+          "tags": ["操作型"]
+        },
+        {
+          "era": "2023",
+          "team": "WBG",
+          "rating": "S",
+          "tags": ["顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "SofM",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2020",
+          "team": "SN",
+          "rating": "S",
+          "tags": ["节奏大师", "天赋怪"]
+        }
+      ]
+    },
+    {
+      "name": "huanfeng",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2020",
+          "team": "SN",
+          "rating": "S",
+          "tags": ["大核"]
+        }
+      ]
+    },
+    {
+      "name": "SwordArt",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2020",
+          "team": "SN",
+          "rating": "S",
+          "tags": ["顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "Zhuo",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2021",
+          "team": "TES",
+          "rating": "A",
+          "tags": ["顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "Mark",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2022",
+          "team": "TES",
+          "rating": "A",
+          "tags": ["顶级蓝领"]
+        },
+        {
+          "era": "2024",
+          "team": "TES",
+          "rating": "A",
+          "tags": ["顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "Wayward",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2022",
+          "team": "TES",
+          "rating": "A",
+          "tags": ["神经刀"]
+        }
+      ]
+    },
+    {
+      "name": "Crisp",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2019",
+          "team": "FPX",
+          "rating": "SS",
+          "tags": ["冠军血脉", "操作型"]
+        },
+        {
+          "era": "2024",
+          "team": "BLG",
+          "rating": "S",
+          "tags": ["操作型", "抗韩奇侠"]
+        }
+      ]
+    },
+    {
+      "name": "Light",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2023",
+          "team": "WBG",
+          "rating": "S",
+          "tags": ["大核", "操作型"]
+        },
+        {
+          "era": "2024",
+          "team": "WBG",
+          "rating": "S",
+          "tags": ["大核"]
+        }
+      ]
+    },
+    {
+      "name": "Crisp",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2023",
+          "team": "WBG",
+          "rating": "S",
+          "tags": ["操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Tarzan",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2019",
+          "team": "GRF",
+          "rating": "SS",
+          "tags": ["节奏大师", "操作型"]
+        },
+        {
+          "era": "2023",
+          "team": "LNG",
+          "rating": "S",
+          "tags": ["节奏大师"]
+        }
+      ]
+    },
+    {
+      "name": "Doran",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2023",
+          "team": "GEN",
+          "rating": "S",
+          "tags": ["操作型", "大赛软脚虾"]
+        },
+        {
+          "era": "2024",
+          "team": "HLE",
+          "rating": "SS",
+          "tags": ["操作型"]
+        },
+        {
+          "era": "2025",
+          "team": "T1",
+          "rating": "S",
+          "tags": ["SKT血脉", "操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Lehends",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2024",
+          "team": "HLE",
+          "rating": "S",
+          "tags": ["操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Delight",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2023-2024",
+          "team": "GEN/HLE",
+          "rating": "S",
+          "tags": ["操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Aiming",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2020",
+          "team": "DK",
+          "rating": "S",
+          "tags": ["大核"]
+        },
+        {
+          "era": "2024",
+          "team": "KT",
+          "rating": "S",
+          "tags": ["大核"]
+        }
+      ]
+    },
+    {
+      "name": "Bdd",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2018",
+          "team": "KZ",
+          "rating": "SS",
+          "tags": ["操作型", "天赋怪"]
+        },
+        {
+          "era": "2023",
+          "team": "KT",
+          "rating": "S",
+          "tags": ["操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Ruler",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2023",
+          "team": "JDG",
+          "rating": "SSS",
+          "tags": ["大核", "操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Cuzz",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2018",
+          "team": "KZ",
+          "rating": "S",
+          "tags": ["节奏大师"]
+        }
+      ]
+    },
+    {
+      "name": "Lehends",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2024",
+          "team": "HLE",
+          "rating": "S",
+          "tags": ["操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Willer",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2024",
+          "team": "HLE",
+          "rating": "S",
+          "tags": ["节奏大师"]
+        }
+      ]
+    },
+    {
+      "name": "Zeka",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2024-2025",
+          "team": "HLE",
+          "rating": "SS",
+          "tags": ["冠军血脉", "操作型", "天赋怪"]
+        }
+      ]
+    },
+    {
+      "name": "AL.Shanks",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2025",
+          "team": "AL",
+          "rating": "S",
+          "tags": ["操作型", "天赋怪"]
+        }
+      ]
+    },
+    {
+      "name": "AL.Croco",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2025",
+          "team": "AL",
+          "rating": "S",
+          "tags": ["节奏大师"]
+        }
+      ]
+    },
+    {
+      "name": "AL.Hoya",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2025",
+          "team": "AL",
+          "rating": "S",
+          "tags": ["操作型"]
+        }
+      ]
+    },
+    {
+      "name": "AL.Hope",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2025",
+          "team": "AL",
+          "rating": "S",
+          "tags": ["大核"]
+        }
+      ]
+    },
+    {
+      "name": "AL.Kael",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2025",
+          "team": "AL",
+          "rating": "A",
+          "tags": ["顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "CFO.Hanabi",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2025",
+          "team": "CFO",
+          "rating": "A",
+          "tags": ["老将"]
+        }
+      ]
+    },
+    {
+      "name": "CFO.Junjia",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2025",
+          "team": "CFO",
+          "rating": "A",
+          "tags": ["节奏大师"]
+        }
+      ]
+    },
+    {
+      "name": "CFO.Gemini",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2025",
+          "team": "CFO",
+          "rating": "A",
+          "tags": ["操作型"]
+        }
+      ]
+    },
+    {
+      "name": "CFO.Doggo",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2025",
+          "team": "CFO",
+          "rating": "S",
+          "tags": ["大核"]
+        }
+      ]
+    },
+    {
+      "name": "CFO.Kaiwing",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2025",
+          "team": "CFO",
+          "rating": "A",
+          "tags": ["老将"]
+        }
+      ]
+    },
+    {
+      "name": "GAM.Levi",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2017",
+          "team": "GAM",
+          "rating": "S",
+          "tags": ["节奏大师", "黑马"]
+        },
+        {
+          "era": "2023-2025",
+          "team": "GAM",
+          "rating": "A",
+          "tags": ["节奏大师", "老将"]
+        }
+      ]
+    },
+    {
+      "name": "NRG.Fudge",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2023",
+          "team": "NRG",
+          "rating": "A",
+          "tags": ["操作型"]
+        }
+      ]
+    },
+    {
+      "name": "NRG.Contractz",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2023",
+          "team": "NRG",
+          "rating": "A",
+          "tags": ["节奏大师"]
+        }
+      ]
+    },
+    {
+      "name": "NRG.Dhokla",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2023",
+          "team": "NRG",
+          "rating": "A",
+          "tags": ["操作型"]
+        }
+      ]
+    },
+    {
+      "name": "NRG.FBI",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2023",
+          "team": "NRG",
+          "rating": "A",
+          "tags": ["大核"]
+        }
+      ]
+    },
+    {
+      "name": "NRG.IgNar",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2023",
+          "team": "NRG",
+          "rating": "A",
+          "tags": ["操作型"]
+        }
+      ]
+    },
+    {
+      "name": "GodV",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2015",
+          "team": "LGD",
+          "rating": "A",
+          "tags": ["大赛软脚虾"]
+        }
+      ]
+    },
+    {
+      "name": "Acorn",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2015",
+          "team": "LGD",
+          "rating": "S",
+          "tags": ["操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Flame",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2015",
+          "team": "LGD",
+          "rating": "S",
+          "tags": ["操作型", "单挑王"]
+        }
+      ]
+    },
+    {
+      "name": "Imp",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2015",
+          "team": "LGD",
+          "rating": "SS",
+          "tags": ["冠军血脉", "神经刀"]
+        }
+      ]
+    },
+    {
+      "name": "Pyl",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2015",
+          "team": "LGD",
+          "rating": "A",
+          "tags": ["操作型"]
+        }
+      ]
+    },
+    {
+      "name": "TBQ",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2015",
+          "team": "LGD",
+          "rating": "B",
+          "tags": ["大赛软脚虾"]
+        }
+      ]
+    },
+    {
+      "name": "Mata",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2016",
+          "team": "RNG",
+          "rating": "SS",
+          "tags": ["冠军血脉", "老将"]
+        }
+      ]
+    },
+    {
+      "name": "Looper",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2016",
+          "team": "RNG",
+          "rating": "S",
+          "tags": ["冠军血脉", "顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "NaMei",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2014-2015",
+          "team": "EDG",
+          "rating": "S",
+          "tags": ["大核"]
+        }
+      ]
+    },
+    {
+      "name": "Koro1",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2015",
+          "team": "EDG",
+          "rating": "S",
+          "tags": ["操作型"]
+        }
+      ]
+    },
+    {
+      "name": "PawN",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2015-2016",
+          "team": "EDG",
+          "rating": "SS",
+          "tags": ["冠军血脉", "操作型", "天赋怪"]
+        }
+      ]
+    },
+    {
+      "name": "Deft",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2015-2016",
+          "team": "EDG",
+          "rating": "SS",
+          "tags": ["大核", "操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Mouse",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2016-2017",
+          "team": "EDG",
+          "rating": "A",
+          "tags": ["顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "iBoy",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2017-2018",
+          "team": "EDG",
+          "rating": "S",
+          "tags": ["操作型", "天赋怪"]
+        }
+      ]
+    },
+    {
+      "name": "Audi",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2017",
+          "team": "EDG",
+          "rating": "A",
+          "tags": ["顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "AmazingJ",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2015-2016",
+          "team": "IM",
+          "rating": "A",
+          "tags": ["顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "Avoidless",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2016",
+          "team": "IM",
+          "rating": "A",
+          "tags": ["节奏大师"]
+        }
+      ]
+    },
+    {
+      "name": "Athena",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2016",
+          "team": "IM",
+          "rating": "A",
+          "tags": ["操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Jinjiao",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2016-2018",
+          "team": "IM/BLG",
+          "rating": "A",
+          "tags": ["大核"]
+        }
+      ]
+    },
+    {
+      "name": "Road",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2016",
+          "team": "IM",
+          "rating": "A",
+          "tags": ["顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "GodV",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2015",
+          "team": "LGD",
+          "rating": "S",
+          "tags": ["天赋怪", "大赛软脚虾"]
+        }
+      ]
+    },
+    {
+      "name": "KAKAO",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2015",
+          "team": "IG",
+          "rating": "S",
+          "tags": ["节奏大师", "操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Zz1tai",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2015",
+          "team": "IG",
+          "rating": "A",
+          "tags": ["操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Time",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2015",
+          "team": "IG",
+          "rating": "A",
+          "tags": ["大核"]
+        }
+      ]
+    },
+    {
+      "name": "Kitties",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2015",
+          "team": "IG",
+          "rating": "A",
+          "tags": ["顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "PDD",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2013-2014",
+          "team": "IG",
+          "rating": "SS",
+          "tags": ["操作型", "单挑王", "老将"]
+        }
+      ]
+    },
+    {
+      "name": "illuSioN",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2013-2014",
+          "team": "IG",
+          "rating": "A",
+          "tags": ["节奏大师"]
+        }
+      ]
+    },
+    {
+      "name": "XiaoXiao",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2012-2013",
+          "team": "IG",
+          "rating": "A",
+          "tags": ["顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "Caomei",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2012-2013",
+          "team": "WE",
+          "rating": "SS",
+          "tags": ["操作型", "老将"]
+        }
+      ]
+    },
+    {
+      "name": "Misaya",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2012-2013",
+          "team": "WE",
+          "rating": "SS",
+          "tags": ["操作型", "老将"]
+        }
+      ]
+    },
+    {
+      "name": "Fzzf",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2012-2015",
+          "team": "WE/EDG",
+          "rating": "SS",
+          "tags": ["老将", "60E", "操作型"]
+        }
+      ]
+    },
+    {
+      "name": "inSec",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2014",
+          "team": "SHR",
+          "rating": "SS",
+          "tags": ["节奏大师", "操作型"]
+        }
+      ]
+    },
+    {
+      "name": "corn",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2014",
+          "team": "SHR",
+          "rating": "A",
+          "tags": ["操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Cola",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2014",
+          "team": "SHR",
+          "rating": "A",
+          "tags": ["顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "Zero",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2014",
+          "team": "SHR",
+          "rating": "A",
+          "tags": ["顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "GodLike",
+      "position": "上单",
+      "versions": [
+        {
+          "era": "2013",
+          "team": "RYL",
+          "rating": "S",
+          "tags": ["操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Lucky",
+      "position": "打野",
+      "versions": [
+        {
+          "era": "2013",
+          "team": "RYL",
+          "rating": "A",
+          "tags": ["节奏大师"]
+        }
+      ]
+    },
+    {
+      "name": "Wh1t3zZ",
+      "position": "中单",
+      "versions": [
+        {
+          "era": "2013",
+          "team": "RYL",
+          "rating": "S",
+          "tags": ["操作型"]
+        }
+      ]
+    },
+    {
+      "name": "Tabe",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2013",
+          "team": "RYL",
+          "rating": "A",
+          "tags": ["顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "Bigpomelo",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2013",
+          "team": "OMG",
+          "rating": "A",
+          "tags": ["顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "San",
+      "position": "下路",
+      "versions": [
+        {
+          "era": "2014",
+          "team": "OMG",
+          "rating": "S",
+          "tags": ["大核"]
+        }
+      ]
+    },
+    {
+      "name": "Cloud",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2014",
+          "team": "OMG",
+          "rating": "A",
+          "tags": ["顶级蓝领"]
+        }
+      ]
+    },
+    {
+      "name": "DaDa777",
+      "position": "辅助",
+      "versions": [
+        {
+          "era": "2014",
+          "team": "OMG",
+          "rating": "A",
+          "tags": ["顶级蓝领"]
+        }
+      ]
+    }
+  ]
+}
